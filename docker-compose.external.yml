@@ -9,6 +9,8 @@ services:
       - TZ=${TIMEZONE:-Etc/UTC}
       - SECRET=${YAMTRACK_SECRET}
       - REDIS_URL=redis://redis:6379
+      - TRAKT_API=${TRAKT_CLIENT_ID}
+      - TRAKT_SECRET=${TRAKT_CLIENT_SECRET:-""}
     volumes:
       - ${YAMTRACK_DB_PATH:-./db}:/yamtrack/db
     networks:
